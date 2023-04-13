@@ -54,6 +54,11 @@ public class ResultadoMedia extends AppCompatActivity {
 
         buttonCalcularAS = findViewById(R.id.buttonCalcularAS);
         buttonCalcularAS.setOnClickListener(this::onClickButton);
+
+        if(media < 4){
+            editTextAvalicaoSubstitutiva.setEnabled(false);
+            buttonCalcularAS.setEnabled(false);
+        }
     }
 
     /**

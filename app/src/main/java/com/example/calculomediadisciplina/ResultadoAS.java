@@ -30,7 +30,7 @@ public class ResultadoAS extends AppCompatActivity {
         float as = valores.getFloat("notaAS");
         float media = (a1 + Math.max(a2, as)) / 2;
 
-        String stringSituacao = media >= 6 ? "Aprovado" : (media >= 4 ? "Avaliação Substituitiva" : "Reprovado");
+        String stringSituacao = media >= 6 ? "Aprovado" : "Reprovado";
 
         textViewAluno = findViewById(R.id.textViewAluno);
         textViewAluno.setText(valores.getString("nomeAluno"));
