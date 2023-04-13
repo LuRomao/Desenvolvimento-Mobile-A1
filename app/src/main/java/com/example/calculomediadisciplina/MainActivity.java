@@ -5,12 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.calculomediadisciplina.util.AfterTextChangeWatcher;
+import com.example.calculomediadisciplina.util.MaxNumberInputFilter;
 
 /**
  * Tela inicial do app.
@@ -32,15 +33,18 @@ public class MainActivity extends AppCompatActivity {
      */
     private void inicializarComponentes(){
         AfterTextChangeWatcher afterTextChanged = new AfterTextChangeWatcher(this::atualizarBotao);
+        InputFilter[] filters = new InputFilter[] { new MaxNumberInputFilter(10)};
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextNome.addTextChangedListener(afterTextChanged);
 
         editTextA1 = findViewById(R.id.editTextA1);
         editTextA1.addTextChangedListener(afterTextChanged);
+        editTextA1.setFilters(filters);
 
         editTextA2 = findViewById(R.id.editTextA2);
         editTextA2.addTextChangedListener(afterTextChanged);
+        editTextA2.setFilters(filters);
 
         buttonCalcularMedia = findViewById(R.id.buttonCalcularMedia);
         buttonCalcularMedia.setOnClickListener(this::onClickButton);

@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.calculomediadisciplina.util.AfterTextChangeWatcher;
+import com.example.calculomediadisciplina.util.MaxNumberInputFilter;
 
 /**
  * Corresponde à tela de apresentação da média do aluno.
@@ -48,6 +50,7 @@ public class ResultadoMedia extends AppCompatActivity {
 
         editTextAvalicaoSubstitutiva = findViewById(R.id.editTextAvalicaoSubstitutiva);
         editTextAvalicaoSubstitutiva.addTextChangedListener(new AfterTextChangeWatcher(this::atualizarBotao));
+        editTextAvalicaoSubstitutiva.setFilters(new InputFilter[] { new MaxNumberInputFilter(10)});
 
         buttonCalcularAS = findViewById(R.id.buttonCalcularAS);
         buttonCalcularAS.setOnClickListener(this::onClickButton);
