@@ -39,13 +39,13 @@ public class ResultadoMedia extends AppCompatActivity {
 
         String stringSituacao = media >= 6 ? "Aprovado" : (media >= 4 ? "Avaliação Substituitiva" : "Reprovado");
 
-        textViewAluno = findViewById(R.id.textViewAluno);
+        textViewAluno = findViewById(R.id.textViewAlunoMedia);
         textViewAluno.setText(valores.getString("nomeAluno"));
 
-        textViewMedia = findViewById(R.id.textViewMedia);
+        textViewMedia = findViewById(R.id.textViewMediaMedia);
         textViewMedia.setText(String.valueOf(media));
 
-        textViewSituacao = findViewById(R.id.textViewSituacao);
+        textViewSituacao = findViewById(R.id.textViewSituacaoMedia);
         textViewSituacao.setText(stringSituacao);
 
         editTextAvalicaoSubstitutiva = findViewById(R.id.editTextAvalicaoSubstitutiva);

@@ -42,11 +42,11 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textViewAluno"
+                android:id="@+id/textViewAlunoAS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip"
-                android:text="nome do aluno"
+                android:text="Nome do Aluno"
                 android:textSize="16sp" />
 
         </TableRow>
@@ -65,7 +65,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textViewMedia"
+                android:id="@+id/textViewMediaAS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip"
@@ -88,11 +88,11 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textViewSituacao"
+                android:id="@+id/textViewSituacaoAS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip"
-                android:text="Aprovado"
+                android:text="Reprovado"
                 android:textSize="16sp" />
 
         </TableRow>

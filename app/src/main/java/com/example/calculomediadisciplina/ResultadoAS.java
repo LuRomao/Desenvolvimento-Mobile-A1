@@ -32,13 +32,13 @@ public class ResultadoAS extends AppCompatActivity {
 
         String stringSituacao = media >= 6 ? "Aprovado" : "Reprovado";
 
-        textViewAluno = findViewById(R.id.textViewAluno);
+        textViewAluno = findViewById(R.id.textViewAlunoAS);
         textViewAluno.setText(valores.getString("nomeAluno"));
 
-        textViewMedia = findViewById(R.id.textViewSituacao);
+        textViewMedia = findViewById(R.id.textViewMediaAS);
         textViewMedia.setText(String.valueOf(media));
 
-        textViewSituacao = findViewById(R.id.textViewSituacao);
+        textViewSituacao = findViewById(R.id.textViewSituacaoAS);
         textViewSituacao.setText(stringSituacao);
     }
 }
