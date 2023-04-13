@@ -6,6 +6,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
+/**
+ * Corresponde à tela de apresentação da média utilizando a avaliação substitutiva.
+ */
 public class ResultadoAS extends AppCompatActivity {
 
     TextView textViewAvaliacaoSubstitutiva;
@@ -18,7 +21,9 @@ public class ResultadoAS extends AppCompatActivity {
         inicializarComponentes();
     }
 
-    @SuppressLint("SetTextI18n")
+    /**
+     * Inicializa e obtem os componentes da tela.
+     */
     private void inicializarComponentes(){
         Bundle bundle = getIntent().getExtras();
         float a1 = bundle.getFloat("notaA1");

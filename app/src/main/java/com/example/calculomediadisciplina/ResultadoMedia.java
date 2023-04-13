@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import com.example.calculomediadisciplina.util.AfterTextChangeWatcher;
 
+/**
+ * Corresponde à tela de apresentação da média do aluno.
+ */
 public class ResultadoMedia extends AppCompatActivity {
 
     TextView textViewAluno, textViewMedia, textViewSituacao;
@@ -27,7 +30,7 @@ public class ResultadoMedia extends AppCompatActivity {
     }
 
     /**
-     *
+     * Inicializa e obtem os componentes da tela.
      */
     private void inicializarComponentes(){
         Bundle valores = getIntent().getExtras();
@@ -54,8 +57,8 @@ public class ResultadoMedia extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param view
+     * Acessa a outra tela ao clicar no botão de calcular avaliação substitutiva.
+     * @param view view do botão.
      */
     private void onClickButton(View view){
         Intent intent = new Intent(getApplicationContext(), ResultadoAS.class);

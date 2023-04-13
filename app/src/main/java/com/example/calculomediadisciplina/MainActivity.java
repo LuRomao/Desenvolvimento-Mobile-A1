@@ -12,6 +12,9 @@ import android.widget.EditText;
 
 import com.example.calculomediadisciplina.util.AfterTextChangeWatcher;
 
+/**
+ * Tela inicial do app.
+ */
 public class MainActivity extends AppCompatActivity {
 
     EditText editTextNome, editTextA1, editTextA2;
@@ -44,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param view
+     * Acessa a outra tela ao clicar no botão de calcular média.
+     * @param view view do botão.
      */
     private void onClickButton(View view){
         Intent intent = new Intent(getApplicationContext(), ResultadoMedia.class);
