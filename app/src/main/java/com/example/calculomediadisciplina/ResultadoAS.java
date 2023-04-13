@@ -2,7 +2,6 @@ package com.example.calculomediadisciplina;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,7 +10,7 @@ import android.widget.TextView;
  */
 public class ResultadoAS extends AppCompatActivity {
 
-    TextView textViewAvaliacaoSubstitutiva;
+    TextView textViewAluno, textViewMedia, textViewSituacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +24,21 @@ public class ResultadoAS extends AppCompatActivity {
      * Inicializa e obtem os componentes da tela.
      */
     private void inicializarComponentes(){
-        Bundle bundle = getIntent().getExtras();
-        float a1 = bundle.getFloat("notaA1");
-        float a2 = bundle.getFloat("notaA2");
-        float as = bundle.getFloat("notaAS");
+        Bundle valores = getIntent().getExtras();
+        float a1 = valores.getFloat("notaA1");
+        float a2 = valores.getFloat("notaA2");
+        float as = valores.getFloat("notaAS");
         float media = (a1 + Math.max(a2, as)) / 2;
 
-        textViewAvaliacaoSubstitutiva = findViewById(R.id.textViewAvaliacaoSubstitutiva);
-        textViewAvaliacaoSubstitutiva.setText("Média: " + media);
+        String stringSituacao = media >= 6 ? "Aprovado" : (media >= 4 ? "Avaliação Substituitiva" : "Reprovado");
 
+        textViewAluno = findViewById(R.id.textViewAluno);
+        textViewAluno.setText(valores.getString("nomeAluno"));
+
+        textViewMedia = findViewById(R.id.textViewSituacao);
+        textViewMedia.setText(String.valueOf(media));
+
+        textViewSituacao = findViewById(R.id.textViewSituacao);
+        textViewSituacao.setText(stringSituacao);
     }
 }

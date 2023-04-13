@@ -2,7 +2,6 @@ package com.example.calculomediadisciplina;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -36,15 +35,13 @@ public class ResultadoMedia extends AppCompatActivity {
         Bundle valores = getIntent().getExtras();
         float media = (valores.getFloat("notaA1") + valores.getFloat("notaA2")) / 2.0f;
 
-        String stringAluno = "Aluno: " + valores.getString("nomeAluno");
-        String stringMedia = "Média: " + media;
         String stringSituacao = media >= 6 ? "Aprovado" : (media >= 4 ? "Avaliação Substituitiva" : "Reprovado");
 
         textViewAluno = findViewById(R.id.textViewAluno);
-        textViewAluno.setText(stringAluno);
+        textViewAluno.setText(valores.getString("nomeAluno"));
 
         textViewMedia = findViewById(R.id.textViewMedia);
-        textViewMedia.setText(stringMedia);
+        textViewMedia.setText(String.valueOf(media));
 
         textViewSituacao = findViewById(R.id.textViewSituacao);
         textViewSituacao.setText(stringSituacao);
